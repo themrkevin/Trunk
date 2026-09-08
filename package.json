@@ -7,7 +7,9 @@
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
@@ -16,7 +18,21 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
+  "imports": {
+    "#app": {
+      "types": "./src/app.ts",
+      "default": "./dist/app.js"
+    },
+    "#core/*": {
+      "types": "./src/core/*.ts",
+      "default": "./dist/core/*.js"
+    },
+    "#features/*": {
+      "types": "./src/features/*.ts",
+      "default": "./dist/features/*.js"
+    }
+  },
   "bugs": {
     "url": "https://github.com/themrkevin/Trunk/issues"
   },
@@ -24,6 +40,12 @@
   "devDependencies": {
     "@types/node": "^26.4.1",
     "tsx": "^4.23.13",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0"
+  },
+  "dependencies": {
+    "@google/genai": "^2.21.0",
+    "fastify": "^5.12.3",
+    "zod": "^4.5.4"
   }
 }
