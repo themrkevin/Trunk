@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1156.0",
+    "@aws-sdk/credential-providers": "^3.1156.0",
     "@google/genai": "^2.21.0",
     "@trunk/contracts": "*",
     "drizzle-orm": "^0.45.4",
