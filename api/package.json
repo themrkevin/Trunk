@@ -5,12 +5,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "zsh -c 'source ../scripts/secrets.zsh && exec tsx watch src/index.ts'",
     "start": "node dist/index.js",
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/core/db/migrate.ts"
   },
   "imports": {
     "#app": {
@@ -28,14 +30,19 @@
   },
   "devDependencies": {
     "@types/node": "^26.4.1",
+    "drizzle-kit": "^0.31.11",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2",
     "vitest": "^5.0.0"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1156.0",
     "@google/genai": "^2.21.0",
     "@trunk/contracts": "*",
+    "drizzle-orm": "^0.45.4",
     "fastify": "^5.12.3",
+    "ioredis": "^6.0.0",
+    "postgres": "^3.4.9",
     "zod": "^4.5.4"
   }
 }

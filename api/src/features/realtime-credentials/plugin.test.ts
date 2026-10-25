@@ -12,6 +12,12 @@ const config: TrunkConfig = {
   credentialLifetimeMinutes: 30,
   newSessionLifetimeMinutes: 1,
   authenticationRequired: false,
+  s3: {
+    region: 'us-east-2',
+    bucket: 'trunk-s3-dev-487694860761-us-east-2-an',
+    accessKey: '',
+    secretKey: '',
+  },
 };
 
 const successfulProvider = (calls: { count: number }): RealtimeCredentialProvider => ({
