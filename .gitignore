@@ -2,7 +2,9 @@ node_modules/
 dist/
 .env
 .DS_Store
-data/
+
+# Test fixture binaries (fetch via scripts/fetch-fixtures.sh)
+worker/testdata/*.race
 
 # Planning & Strategy (Local Only)
 docs/plan/

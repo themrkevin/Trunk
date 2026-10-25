@@ -1,0 +1,1 @@
+# drizzle-kit writes generated SQL migrations here (out: ../db/migrations from api/drizzle.config.ts).
